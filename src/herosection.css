@@ -1,0 +1,89 @@
+.hero-section {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 500px; /* Set the desired height */
+  overflow: hidden;
+}
+
+.hero-background img {
+  width: 100%;
+
+  object-fit: cover;
+  filter: blur(5px);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(
+    0,
+    0,
+    0,
+    0.562
+  ); /* Adjust the last value for the transparency level */
+  z-index: -1;
+}
+
+.hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 10rem; /* Adjust padding as needed */
+  color: white;
+}
+
+.poster img {
+  width: 18rem; /* Set the desired width for the poster */
+  height: auto;
+  border-radius: 5px;
+}
+
+.movie-details {
+  max-width: 50%;
+
+  padding-left: 2rem;
+  /* padding-right: 2rem; */
+  /* border-radius: 10px; */
+  z-index: 1;
+
+  color: white;
+  /* Place the text on top of the overlay */
+  /* Add additional styling for movie details */
+}
+
+/* .gradient-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.497);
+} */
+
+/* Optional: Add a fade transition effect when changing movies */
+.hero-background img,
+.poster img {
+  transition: opacity 2s ease-in-out;
+}
+
+.hero-background img:not(:first-child),
+.poster img:not(:first-child) {
+  opacity: 0;
+}
+
+h1 {
+  font-size: 4rem;
+}

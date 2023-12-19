@@ -1,0 +1,35 @@
+h2 {
+  text-align: left;
+  padding-left: 2rem;
+  color: #dde819;
+}
+
+.carousel-container {
+  overflow: hidden;
+  width: 100%;
+}
+
+.carousel {
+  display: flex;
+  animation: scrollAnimation 35s linear infinite; /* Adjust the duration as needed */
+}
+
+.carousel-item {
+  min-width: 200px; /* Adjust the minimum width of each poster item */
+}
+
+.carousel-item img {
+  width: 100%;
+  height: auto;
+}
+
+@keyframes scrollAnimation {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(
+      -100%
+    ); /* Adjust the percentage based on the number of items */
+  }
+}
