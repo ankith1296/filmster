@@ -1,0 +1,34 @@
+.searchSection {
+  display: flex;
+  align-items: center;
+}
+/* Example styling with CSS */
+input {
+  /* padding: 10px 10px 10px 10px; */
+  margin: 8px;
+  border-radius: 2rem;
+  width: 19rem;
+  height: 2rem;
+  border: none;
+}
+
+button.searchButton {
+  /* padding: 8px 16px; */
+  /* padding: 10px; */
+  width: 3rem;
+  height: 3rem;
+  background-color: #dde819;
+  color: #000000;
+  border: none;
+  border-radius: 10rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button.searchButton:hover {
+  background-color: rgb(183, 192, 24);
+}
+
+button.searchButton:active {
+  background-color: rgb(145, 152, 19);
+}

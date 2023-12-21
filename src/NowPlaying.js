@@ -16,6 +16,7 @@ export default function NowPlaying({ movies, popular }) {
   }, [movies, popular]);
 
   console.log(movies);
+
   return (
     <div>
       <h2>Now Playing </h2>
@@ -29,7 +30,12 @@ export default function NowPlaying({ movies, popular }) {
               <img
                 src={`${posterBaseUrl}${movie.poster_path}`}
                 alt={movie.title}
-                style={{ width: "150px", height: "225px", borderRadius: "5px" }}
+                style={{
+                  width: "150px",
+                  height: "225px",
+                  borderRadius: "5px",
+                  cursor: "pointer",
+                }}
               />
               <p style={{ color: "#ffffff" }}>{movie.title}</p>
             </div>
