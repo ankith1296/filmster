@@ -31,7 +31,7 @@ export default function HeroSection({ popular }) {
           <div className="movie-details">
             <h1>{heroMovie?.title}</h1>
             <p>{heroMovie?.release_date}</p>
-            <p>{heroMovie?.overview}</p>
+            <p className="movie-overview">{heroMovie?.overview}</p>
 
             {/* Add more movie details as needed */}
           </div>
