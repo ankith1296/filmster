@@ -3,13 +3,15 @@ import { useEffect, useState } from "react";
 import NowPlaying from "./NowPlaying";
 import HeroSection from "./HeroSection";
 import Navbar from "./Navbar";
+import SearchResults from "./SearchResults";
 
-const apiKey = "8c02b9a0bfd78dbd3138c39039b35cef"; // Replace with your TMDb API key
+const apiKey = "8c02b9a0bfd78dbd3138c39039b35cef";
 const apiUrl = "https://api.themoviedb.org/3";
 
 export default function Main() {
   const [movies, setMovies] = useState([]);
   const [popular, setPopular] = useState([]);
+  const [dataFromSearch, setDataFromSearch] = useState([]);
 
   useEffect(() => {
     const fetchNowPlayingMovies = async () => {
@@ -24,9 +26,7 @@ export default function Main() {
 
         const data = await response.json();
         setMovies(data.results);
-        console.log(movies);
       } catch (error) {
-        // Handle errors here
         console.error("There was a problem with the fetch operation:", error);
       }
     };
@@ -53,11 +53,21 @@ export default function Main() {
     fetchPopularMovies();
   }, []);
 
-  console.log(movies);
+  const handleSearchData = (data) => {
+    setDataFromSearch(data);
+  };
+
+  console.log(dataFromSearch);
+
   return (
     <div>
-      <Navbar />
-      <HeroSection popular={popular} />
+      <Navbar onSearchData={handleSearchData} />
+      {dataFromSearch !== "" ? (
+        <SearchResults dataFromSearch={dataFromSearch} />
+      ) : (
+        <HeroSection popular={popular} />
+      )}
+
       <NowPlaying movies={movies} popular={popular} />
     </div>
   );

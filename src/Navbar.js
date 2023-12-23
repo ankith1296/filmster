@@ -136,19 +136,45 @@ import filmsterLogo from "./filmsterlogo.png";
 import { useState } from "react";
 import SearchInput from "./SearchInput";
 
-export default function Navbar() {
+const apiKey = "8c02b9a0bfd78dbd3138c39039b35cef";
+export default function Navbar({ onSearchData }) {
   const [searchResults, setSearchResults] = useState([]);
-
   // Function to handle search based on the search term
   const handleSearch = (searchTerm) => {
+    if (searchTerm.trim() !== "") {
+      // Construct the API URL with the search term and API key
+      const apiUrl = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${searchTerm}`;
+
+      // Make the API request
+      fetch(apiUrl)
+        .then((response) => response.json())
+        .then((data) => {
+          // Check if the API request was successful
+          if (data.results && data.results.length > 0) {
+            // Update the search results
+            setSearchResults(data.results);
+            console.log("neeweww");
+          } else {
+            // Display an error message
+            setSearchResults([]);
+          }
+        })
+        .catch((error) => console.error("Error:", error));
+    } else {
+      // Clear the search results if the search term is empty
+      setSearchResults([]);
+    }
     // Perform the search logic, update search results, etc.
     // For simplicity, we're just logging the search term in this example
     console.log("Search Term:", searchTerm);
+    onSearchData(searchResults);
+    // console.log(searchResults);
   };
 
   return (
     <div>
       <div className="NavbarContainer">
+        <div className="menuIcon"></div>
         <div className="logoContainer">
           <img src={filmsterLogo} alt="logo" />
         </div>

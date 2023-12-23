@@ -15,7 +15,7 @@ export default function NowPlaying({ movies, popular }) {
     return () => clearInterval(intervalId);
   }, [movies, popular]);
 
-  console.log(movies);
+  // console.log(movies);
 
   return (
     <div>
