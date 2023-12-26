@@ -9,7 +9,7 @@ const SearchInput = ({ onSearch }) => {
   };
 
   const handleSearch = () => {
-    // Pass the search term to the parent component or perform the search directly
+    // Passing the search term to the parent component
     onSearch(searchTerm);
   };
 

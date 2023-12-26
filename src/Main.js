@@ -62,11 +62,10 @@ export default function Main() {
   return (
     <div>
       <Navbar onSearchData={handleSearchData} />
-      {dataFromSearch !== "" ? (
-        <SearchResults dataFromSearch={dataFromSearch} />
-      ) : (
-        <HeroSection popular={popular} />
-      )}
+
+      <HeroSection popular={popular} />
+
+      <SearchResults dataFromSearch={dataFromSearch} />
 
       <NowPlaying movies={movies} popular={popular} />
     </div>

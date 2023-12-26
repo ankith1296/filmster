@@ -1,0 +1,46 @@
+/* styles.css (example) */
+.navigation-bar {
+  position: relative;
+}
+
+.search-bar {
+  position: absolute;
+  top: 0px; /* Adjust the top position based on your design */
+  left: 0;
+  background: #243248;
+  padding: 0.8rem;
+  border: none;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100; /* Adjust the z-index as needed */
+  opacity: 0; /* Start with 0 opacity */
+  transform: translateY(-20px); /* Move the search bar up initially */
+  transition: opacity 2s ease, transform 0.3s ease;
+}
+
+.search-bar.show {
+  opacity: 1; /* Show with full opacity */
+  transform: translateY(
+    0
+  ); /* Move the search bar down to its normal position */
+}
+
+.search-bar input {
+  color: white;
+  background-color: #243248;
+  border-radius: 0;
+  border: none;
+}
+
+input:focus {
+  outline: none; /* Remove the default focus outline */
+  border: none; /* Remove any additional border you might have */
+}
+
+.search-bar button {
+  background-color: #243248;
+  color: white;
+  border: none;
+}

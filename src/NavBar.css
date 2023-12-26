@@ -11,7 +11,7 @@
   display: none;
 }
 .logoContainer {
-  width: 20%;
+  width: auto;
 }
 
 .logoContainer img {
@@ -29,13 +29,46 @@
   width: 10rem;
 }
 
+.mobileSearch {
+  display: none;
+}
+
 @media only screen and (max-width: 768px) {
   .NavbarContainer {
-    flex-direction: column; /* Stack items vertically on smaller screens */
-    align-items: center; /* Center items in the column */
+    display: flex;
+    width: auto;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .menuIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    color: #b3bc00;
+  }
+
+  .mobileSearch {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+  }
+  .mobileSearch button {
+    color: #b3bc00;
+    background-color: #000;
+    border-radius: 2rem;
+    border: none;
   }
 
   .searchContainer {
     display: none; /* Add some space between logo and search on smaller screens */
+  }
+
+  .linksContainer {
+    display: none;
   }
 }

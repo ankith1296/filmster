@@ -132,14 +132,33 @@
 
 import React from "react";
 import "./NavBar.css";
-import filmsterLogo from "./filmsterlogo.png";
+import filmsterLogo from "./filmsterlogo.svg";
 import { useState } from "react";
 import SearchInput from "./SearchInput";
+import Menu from "@mui/icons-material/Menu";
+import Search from "@mui/icons-material/Search";
+import MobileSearchBar from "./MobileSearchBar";
 
 const apiKey = "8c02b9a0bfd78dbd3138c39039b35cef";
 export default function Navbar({ onSearchData }) {
   const [searchResults, setSearchResults] = useState([]);
   // Function to handle search based on the search term
+
+  const [isSearchVisible, setIsSearchVisible] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+
+  const handleSearchClick = () => {
+    setIsSearchOpen(true);
+  };
+
+  const handleCloseSearch = () => {
+    setIsSearchOpen(false);
+  };
+
+  const toggleSearch = () => {
+    setIsSearchVisible(!isSearchVisible);
+  };
+
   const handleSearch = (searchTerm) => {
     if (searchTerm.trim() !== "") {
       // Construct the API URL with the search term and API key
@@ -168,20 +187,34 @@ export default function Navbar({ onSearchData }) {
     // For simplicity, we're just logging the search term in this example
     console.log("Search Term:", searchTerm);
     onSearchData(searchResults);
-    // console.log(searchResults);
+    console.log(searchResults);
   };
 
   return (
     <div>
       <div className="NavbarContainer">
-        <div className="menuIcon"></div>
+        <div className="menuIcon">
+          <Menu />
+        </div>
         <div className="logoContainer">
           <img src={filmsterLogo} alt="logo" />
+        </div>
+        <div className="mobileSearch">
+          <button onClick={handleSearchClick}>
+            <Search />
+          </button>
+          {isSearchOpen && (
+            <MobileSearchBar
+              onSearch={handleSearch}
+              onClose={handleCloseSearch}
+              isSearchOpen={isSearchOpen}
+            />
+          )}
         </div>
         <div className="searchContainer">
           <SearchInput onSearch={handleSearch} />
         </div>
-        <div className="linksContainer"></div>
+        <div className="linksContainer">Login</div>
       </div>
     </div>
   );

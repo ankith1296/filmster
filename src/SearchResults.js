@@ -10,7 +10,7 @@ export default function SearchResults({ dataFromSearch }) {
           <img
             src={`${posterBaseUrl}${movie.poster_path}`}
             alt={movie.title}
-            style={{ width: "150px", height: "225px", borderRadius: "5px" }}
+            style={{ width: "16rem", height: "28rem", borderRadius: "5px" }}
           />
           <p style={{ color: "#ffffff" }}>{movie.title}</p>
         </div>
