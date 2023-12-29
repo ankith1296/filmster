@@ -57,7 +57,7 @@ export default function Main() {
     setDataFromSearch(data);
   };
 
-  console.log(dataFromSearch);
+  // console.log(dataFromSearch);
 
   return (
     <div>

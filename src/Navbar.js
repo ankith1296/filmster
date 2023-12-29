@@ -135,6 +135,7 @@ import "./NavBar.css";
 import filmsterLogo from "./filmsterlogo.svg";
 import { useState } from "react";
 import SearchInput from "./SearchInput";
+
 import Menu from "@mui/icons-material/Menu";
 import Search from "@mui/icons-material/Search";
 import MobileSearchBar from "./MobileSearchBar";
@@ -142,8 +143,6 @@ import MobileSearchBar from "./MobileSearchBar";
 const apiKey = "8c02b9a0bfd78dbd3138c39039b35cef";
 export default function Navbar({ onSearchData }) {
   const [searchResults, setSearchResults] = useState([]);
-  // Function to handle search based on the search term
-
   const [isSearchVisible, setIsSearchVisible] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
 
@@ -155,9 +154,9 @@ export default function Navbar({ onSearchData }) {
     setIsSearchOpen(false);
   };
 
-  const toggleSearch = () => {
-    setIsSearchVisible(!isSearchVisible);
-  };
+  // const toggleSearch = () => {
+  //   setIsSearchVisible(!isSearchVisible);
+  // };
 
   const handleSearch = (searchTerm) => {
     if (searchTerm.trim() !== "") {
@@ -168,13 +167,10 @@ export default function Navbar({ onSearchData }) {
       fetch(apiUrl)
         .then((response) => response.json())
         .then((data) => {
-          // Check if the API request was successful
           if (data.results && data.results.length > 0) {
-            // Update the search results
             setSearchResults(data.results);
-            console.log("neeweww");
+            // console.log("neeweww");
           } else {
-            // Display an error message
             setSearchResults([]);
           }
         })
@@ -183,9 +179,7 @@ export default function Navbar({ onSearchData }) {
       // Clear the search results if the search term is empty
       setSearchResults([]);
     }
-    // Perform the search logic, update search results, etc.
-    // For simplicity, we're just logging the search term in this example
-    console.log("Search Term:", searchTerm);
+    // console.log("Search Term:", searchTerm);
     onSearchData(searchResults);
     console.log(searchResults);
   };
@@ -196,6 +190,7 @@ export default function Navbar({ onSearchData }) {
         <div className="menuIcon">
           <Menu />
         </div>
+
         <div className="logoContainer">
           <img src={filmsterLogo} alt="logo" />
         </div>

@@ -6,7 +6,6 @@ import { useState } from "react";
 
 const MobileSearchBar = ({ onClose, onSearch, isSearchOpen }) => {
   const [searchTerm, setSearchTerm] = useState("");
-
   const handleInputChange = (event) => {
     setSearchTerm(event.target.value);
   };
