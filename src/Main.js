@@ -4,6 +4,7 @@ import NowPlaying from "./NowPlaying";
 import HeroSection from "./HeroSection";
 import Navbar from "./Navbar";
 import SearchResults from "./SearchResults";
+import Footer from "./Footer";
 
 const apiKey = "8c02b9a0bfd78dbd3138c39039b35cef";
 const apiUrl = "https://api.themoviedb.org/3";
@@ -68,6 +69,7 @@ export default function Main() {
       <SearchResults dataFromSearch={dataFromSearch} />
 
       <NowPlaying movies={movies} popular={popular} />
+      <Footer />
     </div>
   );
 }

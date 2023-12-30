@@ -1,0 +1,42 @@
+.mobile-menu-drawer {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #243248;
+  overflow-x: hidden;
+  transition: 2s;
+  padding-top: 60px;
+  width: 80%;
+  z-index: 1;
+}
+
+.mobile-menu-drawer .close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: #b3bc00;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+.mobile-menu-drawer.open {
+  width: 80%;
+}
+
+.texture {
+  height: 4rem;
+}
+
+.menuSections {
+  height: 2.5rem;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  padding-left: 3rem;
+}
+
+.menuSections:active {
+  background-color: #344868;
+}

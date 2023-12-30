@@ -139,12 +139,18 @@ import SearchInput from "./SearchInput";
 import Menu from "@mui/icons-material/Menu";
 import Search from "@mui/icons-material/Search";
 import MobileSearchBar from "./MobileSearchBar";
+import MobileMenu from "./MobileMenu";
 
 const apiKey = "8c02b9a0bfd78dbd3138c39039b35cef";
 export default function Navbar({ onSearchData }) {
   const [searchResults, setSearchResults] = useState([]);
   const [isSearchVisible, setIsSearchVisible] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [isMenuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuOpen(!isMenuOpen);
+  };
 
   const handleSearchClick = () => {
     setIsSearchOpen(true);
@@ -188,12 +194,17 @@ export default function Navbar({ onSearchData }) {
     <div>
       <div className="NavbarContainer">
         <div className="menuIcon">
-          <Menu />
+          <button onClick={toggleMenu}>
+            <Menu />
+          </button>
         </div>
 
         <div className="logoContainer">
           <img src={filmsterLogo} alt="logo" />
         </div>
+        {isMenuOpen && (
+          <MobileMenu isOpen={isMenuOpen} toggleMenu={toggleMenu} />
+        )}
         <div className="mobileSearch">
           <button onClick={handleSearchClick}>
             <Search />

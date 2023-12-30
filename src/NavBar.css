@@ -10,6 +10,12 @@
 .menuIcon {
   display: none;
 }
+
+.menuIcon button {
+  background-color: #000;
+  border: none;
+  color: #b3bc00;
+}
 .logoContainer {
   width: auto;
 }

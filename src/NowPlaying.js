@@ -37,7 +37,9 @@ export default function NowPlaying({ movies, popular }) {
                   cursor: "pointer",
                 }}
               />
-              <p style={{ color: "#ffffff" }}>{movie.title}</p>
+              <p style={{ color: "#ffffff", fontSize: "0.8rem" }}>
+                {movie.title}
+              </p>
             </div>
           ))}
         </div>
@@ -55,7 +57,10 @@ export default function NowPlaying({ movies, popular }) {
           </div>
         ))}
       </div> */}
-      <h2>Popular</h2>
+
+      {/* Popular movies section */}
+
+      {/* <h2>Popular</h2>
       <div
         style={{
           overflow: "hidden",
@@ -74,7 +79,7 @@ export default function NowPlaying({ movies, popular }) {
             <p style={{ color: "#ffffff" }}>{movie.title}</p>
           </div>
         ))}
-      </div>
+      </div> */}
     </div>
   );
 }

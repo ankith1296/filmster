@@ -1,0 +1,10 @@
+.footerContainer {
+  height: 5rem;
+  background-color: #243248;
+  width: auto;
+}
+
+.logoContainer img {
+  height: 3rem;
+  width: 6rem;
+}

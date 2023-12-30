@@ -11,11 +11,12 @@ h2 {
 
 .carousel {
   display: flex;
-  animation: scrollAnimation 35s linear infinite; /* Adjust the duration as needed */
+  animation: scrollAnimation 25s linear infinite; /* Adjust the duration as needed */
 }
 
 .carousel-item {
-  min-width: 200px; /* Adjust the minimum width of each poster item */
+  /* min-width: 200px; */
+  max-width: 220px; /* Adjust the minimum width of each poster item */
 }
 
 .carousel-item img {
