@@ -12,7 +12,9 @@ const apiUrl = "https://api.themoviedb.org/3";
 export default function Main() {
   const [movies, setMovies] = useState([]);
   const [popular, setPopular] = useState([]);
+
   const [dataFromSearch, setDataFromSearch] = useState([]);
+  const [active, setactive] = useState(null);
 
   useEffect(() => {
     const fetchNowPlayingMovies = async () => {
@@ -56,6 +58,7 @@ export default function Main() {
 
   const handleSearchData = (data) => {
     setDataFromSearch(data);
+    setactive(data);
   };
 
   // console.log(dataFromSearch);
@@ -64,9 +67,27 @@ export default function Main() {
     <div>
       <Navbar onSearchData={handleSearchData} />
 
-      <HeroSection popular={popular} />
+      {/* <HeroSection popular={popular} />
 
-      <SearchResults dataFromSearch={dataFromSearch} />
+      <SearchResults dataFromSearch={dataFromSearch} /> */}
+
+      {/* {dataFromSearch === null ? (
+        // Display search results if available
+        <HeroSection popular={popular} />
+      ) : (
+        // Display HeroSection if no search has been performed
+        <SearchResults dataFromSearch={dataFromSearch} />
+      )} */}
+
+      {active === null && (
+        // Display HeroSection only when no search has been performed
+        <HeroSection popular={popular} />
+      )}
+
+      {active !== null && (
+        // Display SearchResults when search has been performed
+        <SearchResults dataFromSearch={dataFromSearch} />
+      )}
 
       <NowPlaying movies={movies} popular={popular} />
       <Footer />

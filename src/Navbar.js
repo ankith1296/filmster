@@ -220,7 +220,11 @@ export default function Navbar({ onSearchData }) {
         <div className="searchContainer">
           <SearchInput onSearch={handleSearch} />
         </div>
-        <div className="linksContainer">Login</div>
+        <div className="linksContainer">
+          <p>About Us</p>
+          <p>Contact</p>
+          <button className="loginButton">Login</button>
+        </div>
       </div>
     </div>
   );

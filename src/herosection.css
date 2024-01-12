@@ -49,10 +49,11 @@
   width: 18rem; /* Set the desired width for the poster */
   height: auto;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .movie-details {
-  max-width: 50%;
+  max-width: 40%;
 
   padding-left: 2rem;
   /* padding-right: 2rem; */

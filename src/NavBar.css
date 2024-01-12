@@ -14,7 +14,7 @@
 .menuIcon button {
   background-color: #000;
   border: none;
-  color: #b3bc00;
+  color: #dde819;
 }
 .logoContainer {
   width: auto;
@@ -27,12 +27,33 @@
 }
 .searchContainer {
   /* background-color: blue; */
-  width: 25rem;
+  width: 30rem;
   display: flex;
+  position: absolute;
+  left: 40%;
+  top: 1%;
 }
 .linksContainer {
-  background-color: chartreuse;
-  width: 10rem;
+  color: #dde819;
+  width: 20rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.loginButton {
+  height: 2rem;
+  font-size: 1rem;
+  background-color: #000;
+  color: #dde819;
+  border: 2px solid #dde819;
+  border-radius: 1rem;
+  width: 6rem;
+  cursor: pointer;
+}
+
+.loginButton:active {
+  background-color: #3b3b3b;
 }
 
 .mobileSearch {
@@ -53,7 +74,7 @@
     justify-content: center;
     width: 2rem;
     height: 2rem;
-    color: #b3bc00;
+    color: #dde819;
   }
 
   .mobileSearch {
@@ -64,7 +85,7 @@
     height: 2rem;
   }
   .mobileSearch button {
-    color: #b3bc00;
+    color: #dde819;
     background-color: #000;
     border-radius: 2rem;
     border: none;

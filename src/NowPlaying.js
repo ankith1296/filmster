@@ -19,7 +19,10 @@ export default function NowPlaying({ movies, popular }) {
 
   return (
     <div>
-      <h2>Now Playing </h2>
+      ]
+      <div className="nowPlayingheadingContainer">
+        <h2>Now Playing </h2>
+      </div>
       <div className="carousel-container">
         <div
           className="carousel"
@@ -57,9 +60,7 @@ export default function NowPlaying({ movies, popular }) {
           </div>
         ))}
       </div> */}
-
       {/* Popular movies section */}
-
       {/* <h2>Popular</h2>
       <div
         style={{

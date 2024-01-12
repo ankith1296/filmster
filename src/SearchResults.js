@@ -8,12 +8,25 @@ export default function SearchResults({ dataFromSearch }) {
       {dataFromSearch.map((movie) => (
         <div
           key={movie.id}
-          style={{ margin: "1.5rem", height: "auto", width: "10rem" }}
+          style={{
+            margin: "1rem",
+            height: "auto",
+            width: "5rem",
+            display: "flex",
+            flexDirection: "column",
+
+            alignItems: "center",
+          }}
         >
           <img
             src={`${posterBaseUrl}${movie.poster_path}`}
             alt={movie.title}
-            style={{ width: "10rem", height: "15rem", borderRadius: "5px" }}
+            style={{
+              width: "7rem",
+              height: "12rem",
+              borderRadius: "5px",
+              margin: "1rem",
+            }}
           />
           <p
             style={{
